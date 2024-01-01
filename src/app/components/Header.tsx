@@ -1,8 +1,16 @@
+import { AppBar, Toolbar, Typography, Button } from '@mui/material';
+
 const Header = () => {
   return (
-    <>
-      <h1>Hello, World!</h1>
-    </>
+    <header>
+      <AppBar>
+        <Toolbar>
+          <Typography></Typography>
+          <Button></Button>
+          <Button></Button>
+        </Toolbar>
+      </AppBar>
+    </header>
   );
 };
 
