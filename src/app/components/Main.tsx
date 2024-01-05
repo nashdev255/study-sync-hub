@@ -1,6 +1,6 @@
 const Main = () => {
   return (
-    <main>
+    <main className='min-h-screen'>
       
     </main>
   );
