@@ -1,4 +1,4 @@
-import HeadLine from '@/app/components/HeadLine';
+import HeadLine from '@/app/components/root/main/HeadLine';
 
 const Main = () => {
   return (

@@ -1,8 +1,8 @@
-import Header from '@/app/components/Header';
-import Main from '@/app/components/Main';
-import Footer from '@/app/components/Footer';
+import Header from '@/app/components/root/header/Header';
+import Main from '@/app/components/root/main/Main';
+import Footer from '@/app/components/root/footer/Footer';
 
-export default function Home() {
+const Home = async () => {
   return (
     <>
       <Header />
@@ -10,4 +10,6 @@ export default function Home() {
       <Footer />
     </>
   );
-}
+};
+
+export default Home;
