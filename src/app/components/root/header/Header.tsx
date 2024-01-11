@@ -7,11 +7,11 @@ import { FaGithub } from 'react-icons/fa';
 
 const Header = () => {
   return (
-    <header className=' bg-slate-400'>
+    <header className=' bg-'>
       <div className='flex justify-between mx-8 py-4'>
         <div className='px-8'>
-          <Link href={'/images/ssh_gray.jpg'}>
-            <Image src={'/images/ssh_gray.jpg'} alt={'icon'} height={'50'} width={'50'} />
+          <Link href={'/images/ssh_gray_fa.png'}>
+            <Image src={'/images/ssh_fa.png'} alt={'icon'} height={'75'} width={'75'} />
           </Link>
         </div>
         <nav className='flex items-center'>

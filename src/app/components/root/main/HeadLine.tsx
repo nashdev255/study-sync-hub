@@ -7,7 +7,7 @@ const HeadLine = () => {
       <div className='flex justify-center'>
         <div className='flex justify-center'>
           <div className='flex h-56 w-56 items-center'>
-            <Image src={'/images/ssh_gray.jpg'} alt='StudySyncHub' height={'150'} width={'150'} />
+            <Image src={'/images/ssh_fa.png'} alt='StudySyncHub' height={'200'} width={'200'} />
           </div>
         </div>
         <div className='my-auto h-full items-center space-y-4'>

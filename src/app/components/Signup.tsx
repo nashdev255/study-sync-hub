@@ -77,7 +77,7 @@ const Signup = () => {
   return (
     <div className='my-6 flex justify-center'>
       <div className='mx-6 w-full max-w-[500px] space-y-6'>
-        <h3 className='text-center text-xl font-bold'>HackZenithアカウントの取得</h3>
+        <h3 className='text-center text-xl font-bold'>StudySyncHubアカウントの取得</h3>
         <form onSubmit={handleSubmit(onSubmit)} className='space-y-6'>
           {/* ユーザーネーム入力 */}
           <div>

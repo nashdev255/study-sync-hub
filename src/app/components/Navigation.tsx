@@ -8,7 +8,7 @@ import { IconContext } from 'react-icons';
 import { GoTriangleDown, GoPerson } from 'react-icons/go';
 import type { Session } from '@supabase/auth-helpers-nextjs';
 import type { Database } from '@/lib/database.types';
-type ProfileType = Database['public']['Tables']['profiles']['Row'];
+type ProfileType = Database['public']['Tables']['users']['Row'];
 
 const Navigation = ({ session, profile }: { session: Session | null, profile: ProfileType | null }) => {
   const { setUser } = useStore();
@@ -18,7 +18,7 @@ const Navigation = ({ session, profile }: { session: Session | null, profile: Pr
       id: session ? session.user.id : '',
       email: session ? session.user.email as string: '',
       name: session && profile ? profile.name: '',
-      introduce: session && profile ? profile.introduce: '',
+      bio: session && profile ? profile.bio: '',
       avatar_url: session && profile ? profile.avatar_url: '',
     });
   }, [session, setUser, profile]);

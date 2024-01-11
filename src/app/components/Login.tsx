@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import Link from 'next/link';
-import Loading from '@/app/Loading';
+import Loading from '@/app/components/Loading';
 import * as z from 'zod';
 import type { Database } from '@/lib/database.types';
 type Schema = z.infer<typeof schema>;
@@ -59,7 +59,7 @@ const Login = () => {
   return (
     <div className='my-6 flex justify-center'>
       <div className='mx-6 w-full max-w-[500px] space-y-6'>
-        <h3 className='text-center text-xl font-bold'>HackZenithにログインする</h3>
+        <h3 className='text-center text-xl font-bold'>StudySyncHubにログインする</h3>
         <form onSubmit={handleSubmit(onSubmit)} className='space-y-6'>
           {/* メールアドレス入力 */}
           <div>
