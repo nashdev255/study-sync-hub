@@ -1,7 +1,7 @@
 const Contents = () => {
   return (
     <>
-      <div className="py-12 px-[10vw] space-y-8">
+      <div className="py-12 px-[10vw] space-y-12">
         <div className="space-y-4">
           <h1 className="text-3xl font-bold">StudySyncHubの概要</h1>
           <p className="text-xl">
@@ -46,6 +46,55 @@ const Contents = () => {
               </tbody>
             </table>
           </div>
+        </div>
+        <div className="space-y-4">
+          <h1 className="text-3xl font-bold">デザイン / 構成</h1>
+          <p className="text-xl">
+            StudySyncHubには主に次の5つの機能があります。
+          </p>
+          <div className="space-y-4">
+            <h2 className="text-2xl font-semibold">Scheduling</h2>
+            <p className="text-lg px-4">
+              勉強に関する予定を管理します。
+            </p>
+          </div>
+          <div className="space-y-4">
+            <h2 className="text-2xl font-semibold">Progress</h2>
+            <p className="text-lg px-4">
+              勉強の進捗報告を行います。
+            </p>
+          </div>
+          <div className="space-y-4">
+            <h2 className="text-2xl font-semibold">Articles</h2>
+            <p className="text-lg px-4">
+              勉強に関する記事を投稿することができます。
+            </p>
+          </div>
+          <div className="space-y-4">
+            <h2 className="text-2xl font-semibold">StudySync Books</h2>
+            <p className="text-lg px-4">
+              勉強に関する本を投稿することができます。<br />
+              投稿するユーザーは信頼度と人気度を高めることによって、<br />
+              本を有料化することができるようになります。
+            </p>
+          </div>
+          <div className="space-y-4">
+            <h2 className="text-2xl font-semibold">Recommends</h2>
+            <p className="text-lg px-4">
+              ユーザーの進捗や傾向を分析し、
+              ユーザーにあった書籍や記事、StudySync Booksを
+              紹介します。
+            </p>
+          </div>
+        </div>
+        <div className="space-y-4">
+          <h1 className="text-3xl font-bold">今後の展望</h1>
+          <p className="text-xl">
+            StudySyncHub Proというサブスクリプションを導入し、<br />
+            StudySync Booksなどの機能をより快適に利用できるようにしようと考えています。<br />
+            また、学生の就職に役立つ情報を提供するため、<br />
+            ポートフォリオや資料請求機能なども考えています。
+          </p>
         </div>
       </div>
     </>
