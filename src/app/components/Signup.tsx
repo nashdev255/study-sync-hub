@@ -31,8 +31,15 @@ const Signup = () => {
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm({
-    defaultValues: { name: '', email: '', password: '', age: 0, grade: 0, school_name: '' },
+  } = useForm<Schema>({
+    defaultValues: {
+      name: '',
+      email: '',
+      password: '',
+      age: undefined,
+      grade: undefined,
+      school_name: ''
+    },
     resolver: zodResolver(schema),
   });
 
@@ -83,7 +90,7 @@ const Signup = () => {
   };
 
   return (
-    <div className='my-6 flex justify-center'>
+    <div className='h-[100vh] flex justify-center items-center'>
       <div className='mx-6 w-full max-w-[500px] space-y-6'>
         <h3 className='text-center text-xl font-bold'>StudySyncHubアカウントの取得</h3>
         <form onSubmit={handleSubmit(onSubmit)} className='space-y-6'>
