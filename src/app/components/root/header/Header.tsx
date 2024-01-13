@@ -10,7 +10,7 @@ const Header = () => {
     <header className='bg-gray-900'>
       <div className='flex justify-between mx-8 py-4'>
         <div className='px-0 sm:px-8'>
-          <Link href={'/images/ssh_fa.png'}>
+          <Link href={'/'}>
             <Image src={'/images/ssh_fa.png'} alt={'icon'} height={'65'} width={'65'} />
           </Link>
         </div>

@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+p, h1, h2, h3, th, td {
+  color: #FFFFFF;
+}
+
 body {
   background-color: #000000;
 }
