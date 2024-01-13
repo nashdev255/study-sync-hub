@@ -36,25 +36,34 @@ export interface Database {
     Tables: {
       users: {
         Row: {
+          age: number | null
           avatar_url: string | null
           bio: string | null
           email: string
+          grade: number | null
           id: string
           name: string | null
+          school_name: string | null
         }
         Insert: {
+          age?: number | null
           avatar_url?: string | null
           bio?: string | null
           email: string
+          grade?: number | null
           id: string
           name?: string | null
+          school_name?: string | null
         }
         Update: {
+          age?: number | null
           avatar_url?: string | null
           bio?: string | null
           email?: string
+          grade?: number | null
           id?: string
           name?: string | null
+          school_name?: string | null
         }
         Relationships: [
           {
