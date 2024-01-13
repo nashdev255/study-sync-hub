@@ -15,6 +15,9 @@ const schema = z.object({
   name: z.string().min(2, { message: '2文字以上入力する必要があります。'}).max(16, { message: '16文字以下にする必要があります。' }),
   email: z.string().email({ message: 'メールアドレスを正しく入力してください。' }),
   password: z.string().min(6, { message: '6文字以上入力する必要があります。' }),
+  age: z.number(),
+  grade: z.number(),
+  school_name: z.string()
 });
 
 const Signup = () => {
@@ -29,7 +32,7 @@ const Signup = () => {
     formState: { errors },
     reset,
   } = useForm({
-    defaultValues: { name: '', email: '', password: '' },
+    defaultValues: { name: '', email: '', password: '', age: 0, grade: 0, school_name: '' },
     resolver: zodResolver(schema),
   });
 
@@ -46,17 +49,22 @@ const Signup = () => {
         },
       });
 
-      if(errorSignup) {
+      if ( errorSignup ) {
         setMessage('エラーが発生しました。' + errorSignup.message);
         return;
       }
 
       const { error: updateError } = await supabase
-        .from('profiles')
-        .update({ name: data.name })
+        .from('users')
+        .update({
+          name: data.name,
+          age: data.age,
+          grade: data.grade,
+          school_name: data.school_name,
+        })
         .eq('email', data.email);
 
-      if(updateError) {
+      if ( updateError ) {
         setMessage('エラーが発生しました。' + updateError.message);
         return;
       }
@@ -65,7 +73,7 @@ const Signup = () => {
       reset();
       setMessage('本登録用のURLを記載したメッセージを送信しました。メールをご確認の上、メール本文中のURLをクリックして本登録へお進みください。');
       
-    } catch(error) {
+    } catch ( error ) {
       setMessage('エラーが発生しました。' + error);
       return;
     } finally {
@@ -113,6 +121,41 @@ const Signup = () => {
               {...register('password', { required: true })}
             />
             <div className='my-3 text-center text-sm text-red-500'>{errors.password?.message}</div>
+          </div>
+
+          {/* 年齢入力 */}
+          <div>
+            <input
+              type="number"
+              className='w-full rounded-md border p-3 focus:border-sky-500 focus:outline-none'
+              placeholder='年齢'
+              id='age'
+              {...register('age', { required: false })}
+            />
+          </div>
+
+          <div className='flex space-x-4'>
+            {/* 学校名入力 */}
+            <div>
+              <input
+                type="text"
+                className='w-full rounded-md border p-3 focus:border-sky-500 focus:outline-none'
+                placeholder='学校名'
+                id='school_name'
+                {...register('school_name', { required: false })}
+              />
+            </div>
+
+            {/* 学年入力 */}
+            <div>
+              <input
+                type="number"
+                className='w-full rounded-md border p-3 focus:border-sky-500 focus:outline-none'
+                placeholder='学年'
+                id='grade'
+                {...register('grade', { required: false })}
+              />
+            </div>
           </div>
 
           {/* サインアップボタン */}

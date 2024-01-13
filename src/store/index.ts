@@ -9,11 +9,11 @@ type StateType = {
 
 const useStore = create<StateType>((set) => ({
   user: {
-    age: 0,
+    age: null,
     avatar_url: '',
     bio: '',
     email: '',
-    grade: 0,
+    grade: null,
     id: '',
     name: '',
     school_name: '',
