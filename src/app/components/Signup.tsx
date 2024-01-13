@@ -15,8 +15,8 @@ const schema = z.object({
   name: z.string().min(2, { message: '2文字以上入力する必要があります。'}).max(16, { message: '16文字以下にする必要があります。' }),
   email: z.string().email({ message: 'メールアドレスを正しく入力してください。' }),
   password: z.string().min(6, { message: '6文字以上入力する必要があります。' }),
-  age: z.number(),
-  grade: z.number(),
+  age: z.number().optional().nullable(),
+  grade: z.number().optional().nullable(),
   school_name: z.string()
 });
 
@@ -31,13 +31,13 @@ const Signup = () => {
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm<Schema>({
+  } = useForm({
     defaultValues: {
       name: '',
       email: '',
       password: '',
-      age: undefined,
-      grade: undefined,
+      age: null,
+      grade: null,
       school_name: ''
     },
     resolver: zodResolver(schema),
@@ -137,8 +137,9 @@ const Signup = () => {
               className='w-full rounded-md border p-3 focus:border-sky-500 focus:outline-none'
               placeholder='年齢'
               id='age'
-              {...register('age', { required: false })}
+              {...register('age', { valueAsNumber: true, required: false })}
             />
+            <div className='my-3 text-center text-sm text-red-500'>{errors.age?.message}</div>
           </div>
 
           <div className='flex space-x-4'>
@@ -160,7 +161,7 @@ const Signup = () => {
                 className='w-full rounded-md border p-3 focus:border-sky-500 focus:outline-none'
                 placeholder='学年'
                 id='grade'
-                {...register('grade', { required: false })}
+                {...register('grade', { valueAsNumber: true, required: false })}
               />
             </div>
           </div>
