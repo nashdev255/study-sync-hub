@@ -40,7 +40,7 @@ const Login = () => {
         password: data.password,
       });
 
-      if(error) {
+      if ( error ) {
         setMessage('エラーが発生しました。' + error.message);
         return;
       }

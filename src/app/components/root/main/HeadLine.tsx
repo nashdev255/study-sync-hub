@@ -4,7 +4,7 @@ import Image from 'next/image';
 const HeadLine = () => {
   return (
     <>
-      <div className="bg-cover sm:flex sm:space-x-12 md:bg-[url('/images/header.png')] md:py-12 xl:py-48">
+      <div className="bg-cover sm:flex sm:space-x-12 md:bg-[url('/images/header.png')] md:py-10 xl:py-48">
         <div className='flex justify-center md:hidden'>
           <div className='h-auto w-auto items-center py-10'>
             <Image src={'/images/ssh_fa.png'} alt='StudySyncHub' height={'200'} width={'200'} />
