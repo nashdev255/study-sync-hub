@@ -10,7 +10,7 @@ const LoginPage = async () => {
   const {
     data: { session },
   } = await supabase.auth.getSession();
-  if ( session ) redirect('/dashboard');
+  if ( session ) redirect('/timeline');
 
   return <Login />;
 };

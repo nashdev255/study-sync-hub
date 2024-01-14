@@ -1,4 +1,4 @@
-import Header from '@/app/components/Header';
+import Header from '@/app/components/home/Header';
 import Main from '@/app/components/Main';
 import Footer from '@/app/components/Footer';
 
