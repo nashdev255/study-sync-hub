@@ -16,20 +16,6 @@ const Header = () => {
         </div>
         <nav className='flex items-center'>
           <ul className='flex'>
-            {/* <li className='px-4'>
-              <Link href={'https://github.com/nashdev255/ssh-mock'} target='blank'>
-                <IconContext.Provider value={{ size: '40px'}}>
-                  <FaGithub />
-                </IconContext.Provider>
-              </Link>
-            </li>
-            <li className='px-4'>
-              <Link href={'https://github.com/nashdev255/ssh-mock'} target='blank'>
-                <IconContext.Provider value={{ size: '40px'}}>
-                  <FaGithub />
-                </IconContext.Provider>
-              </Link>
-            </li> */}
             <li className='px-4'>
               <Link href={'https://github.com/nashdev255/ssh-mock'} target='blank'>
                 <IconContext.Provider value={{ size: '40px', color:'white'}}>
