@@ -36,7 +36,7 @@ const Logout = () => {
 
   return (
     <div>
-      <div className='mb-5 text-white text-center'>ログアウトしますか？</div>
+      <div className='mb-5 text-center text-white'>ログアウトしますか？</div>
       <form onSubmit={onSubmit}>
         <div className='mb-5'>
           {loading ? (
