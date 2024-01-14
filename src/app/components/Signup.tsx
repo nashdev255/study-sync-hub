@@ -47,6 +47,7 @@ const Signup = () => {
     setLoading(true);
 
     try {
+      console.log(data.email + ' ' + data.password + ' ' + location.origin);
       const { error: errorSignup } = await supabase.auth.signUp({
         email: data.email,
         password: data.password,
@@ -57,7 +58,7 @@ const Signup = () => {
       });
 
       if ( errorSignup ) {
-        setMessage('エラーが発生しました。' + errorSignup.message);
+        setMessage('iエラーが発生しました。' + errorSignup.message);
         return;
       }
 
@@ -72,7 +73,7 @@ const Signup = () => {
         .eq('email', data.email);
 
       if ( updateError ) {
-        setMessage('エラーが発生しました。' + updateError.message);
+        setMessage('tエラーが発生しました。' + updateError.message);
         return;
       }
 
