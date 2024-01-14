@@ -1,4 +1,4 @@
-![Study Sync Hub](public/images/header.png)
+![Study Sync Hub](public/images/header5.png)
 
 ### 目次
 
