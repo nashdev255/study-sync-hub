@@ -25,7 +25,7 @@ const Logout = () => {
 
       router.push('/');
 
-    } catch(error) {
+    } catch ( error ) {
       setMessage('エラーが発生しました。' + error);
       return;
     } finally {
@@ -36,7 +36,7 @@ const Logout = () => {
 
   return (
     <div>
-      <div className='mb-5 text-center'>ログアウトしますか？</div>
+      <div className='mb-5 text-white text-center'>ログアウトしますか？</div>
       <form onSubmit={onSubmit}>
         <div className='mb-5'>
           {loading ? (
@@ -45,7 +45,9 @@ const Logout = () => {
             <button
               type='submit'
               className='w-full rounded-full bg-red-500 p-2 text-sm font-bold text-white hover:brightness-95'
-            >ログアウト</button>
+            >
+              ログアウト
+            </button>
           )}
         </div>
       </form>
