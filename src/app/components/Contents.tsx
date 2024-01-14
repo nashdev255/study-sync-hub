@@ -1,7 +1,7 @@
 const Contents = () => {
   return (
     <>
-      <div className="py-12 px-[10vw] space-y-12">
+      <div className="space-y-12 px-[10vw] py-12">
         <div className="space-y-4">
           <h1 className="text-3xl font-bold">StudySyncHubの概要</h1>
           <p className="text-xl">
@@ -12,11 +12,11 @@ const Contents = () => {
         <div className="space-y-6">
           <h1 className="text-3xl font-bold">技術構成</h1>
           <div className="w-[75vw]">
-            <table className="table-fixed m-4 w-full">
+            <table className="m-4 w-full table-fixed">
               <thead>
                 <tr>
-                  <th className="border px-2 py-2">Domain</th>
-                  <th className="border px-2 py-2">Technoloy Stack</th>
+                  <th className="border p-2">Domain</th>
+                  <th className="border p-2">Technoloy Stack</th>
                 </tr>
               </thead>
               <tbody>
@@ -54,25 +54,25 @@ const Contents = () => {
           </p>
           <div className="space-y-4">
             <h2 className="text-2xl font-semibold">Scheduling</h2>
-            <p className="text-lg px-4">
+            <p className="px-4 text-lg">
               勉強に関する予定を管理します。
             </p>
           </div>
           <div className="space-y-4">
             <h2 className="text-2xl font-semibold">Progress</h2>
-            <p className="text-lg px-4">
+            <p className="px-4 text-lg">
               勉強の進捗報告を行います。
             </p>
           </div>
           <div className="space-y-4">
             <h2 className="text-2xl font-semibold">Articles</h2>
-            <p className="text-lg px-4">
+            <p className="px-4 text-lg">
               勉強に関する記事を投稿することができます。
             </p>
           </div>
           <div className="space-y-4">
             <h2 className="text-2xl font-semibold">StudySync Books</h2>
-            <p className="text-lg px-4">
+            <p className="px-4 text-lg">
               勉強に関する本を投稿することができます。<br />
               投稿するユーザーは信頼度と人気度を高めることによって、<br />
               本を有料化することができるようになります。
@@ -80,7 +80,7 @@ const Contents = () => {
           </div>
           <div className="space-y-4">
             <h2 className="text-2xl font-semibold">Recommends</h2>
-            <p className="text-lg px-4">
+            <p className="px-4 text-lg">
               ユーザーの進捗や傾向を分析し、
               ユーザーにあった書籍や記事、StudySync Booksを
               紹介します。

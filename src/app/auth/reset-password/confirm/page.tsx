@@ -2,7 +2,7 @@ import Password from '@/app/components/Password';
 
 const ResetPasswordConfirmPage = () => {
   return (
-    <div className='max-w-[400px] mx-auto'>
+    <div className='mx-auto max-w-[400px]'>
       <Password />
     </div>
   );

@@ -54,14 +54,14 @@ const ResetPassword = () => {
   };
 
   return (
-    <div className='max-w-[400px] mx-auto'>
-      <div className='text-center font-bold text-xl mb-10'>パスワードを忘れた場合</div>
+    <div className='mx-auto max-w-[400px]'>
+      <div className='mb-10 text-center text-xl font-bold'>パスワードを忘れた場合</div>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className='mb-5'>
-          <div className='text-sm mb-1 font-bold'>メールアドレス</div>
+          <div className='mb-1 text-sm font-bold'>メールアドレス</div>
           <input
             type="email"
-            className='border rounded-md w-full py-2 px-3 focus:outline-none focus:border-sky-500'
+            className='w-full rounded-md border px-3 py-2 focus:border-sky-500 focus:outline-none'
             placeholder='メールアドレス'
             id='email'
             {...register('email', { required: true })}
@@ -74,7 +74,7 @@ const ResetPassword = () => {
           ) : (
             <button
               type='submit'
-              className='font-bold bg-sky-500 hover:brightness-95 w-full rounded-full p-2 text-white text-sm'
+              className='w-full rounded-full bg-sky-500 p-2 text-sm font-bold text-white hover:brightness-95'
             >
               送信
             </button>

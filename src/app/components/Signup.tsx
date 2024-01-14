@@ -50,7 +50,6 @@ const Signup = () => {
       const { error: errorSignup } = await supabase.auth.signUp({
         email: data.email,
         password: data.password,
-        /* 確認メールのリダイレクト先の指定 */
         options: {
           emailRedirectTo: `${location.origin}/auth/callback`,
         },
@@ -90,7 +89,7 @@ const Signup = () => {
   };
 
   return (
-    <div className='h-[100vh] flex justify-center items-center'>
+    <div className='flex h-[100vh] items-center justify-center'>
       <div className='mx-6 w-full max-w-[500px] space-y-6'>
         <h3 className='text-center text-xl font-bold'>StudySyncHubアカウントの取得</h3>
         <form onSubmit={handleSubmit(onSubmit)} className='space-y-6'>
