@@ -1,4 +1,4 @@
-import Footer from '@/app/components/root/footer/Footer';
+import Footer from '@/app/components/Footer';
 
 const Dashboard = () => {
   return (
