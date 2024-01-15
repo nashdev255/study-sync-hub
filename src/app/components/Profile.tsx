@@ -37,7 +37,7 @@ const Profile = () => {
     formState: { errors },
   } = useForm({
     defaultValues: {
-      name: user.name ? user.name : '',
+      name: user.name ? user.name: '',
       bio: user.bio ? user.bio : '',
       age: user.age ? user.age : null,
       grade: user.grade ? user.grade : null,
@@ -113,7 +113,10 @@ const Profile = () => {
           .update({
             name: data.name,
             bio: data.bio,
-            avatar_url,
+            avatar_url: avatar_url,
+            age: data.age,
+            grade: data.grade,
+            school_name: data.school_name
           })
           .eq('id', user.id);
           
@@ -135,19 +138,21 @@ const Profile = () => {
   };
 
   return (
-    <div>
+    <div className='mx-8 justify-center md:mx-16'>
       <div className='mb-10 text-center text-xl font-bold text-white'>プロフィール</div>
       <form onSubmit={handleSubmit(onSubmit)}>
+        {/* アイコンの表示と選択 */}
         <div className='mb-5'>
           <div className='mb-5 flex flex-col items-center justify-center text-sm'>
-            <div className='relative mb-5 h-32 w-32'>
+            <label htmlFor='avatar' className='relative mb-5 h-36 w-36 lg:h-40 lg:w-40'>
               <Image src={avatarUrl} className='rounded-full object-cover' alt='avatar' fill/>
-            </div>
-            <input type="file" id='avatar' onChange={onUploadImage} />
+            </label>
+            <input type="file" id='avatar' onChange={onUploadImage} className='hidden' />
             {fileMessage && <div className='my-5 text-center text-red-500'>{fileMessage}</div>}
           </div>
         </div>
 
+        {/* 名前の表示と入力 */}
         <div className='mb-5'>
           <div className='mb-1 text-sm font-bold text-white'>名前</div>
           <input
@@ -161,17 +166,63 @@ const Profile = () => {
           <div className='my-3 text-center text-sm text-red-500'>{errors.name?.message}</div>
         </div>
 
+        {/* 自己紹介の表示と入力 */}
         <div className='mb-5'>
           <div className='mb-1 text-sm font-bold text-white'>自己紹介</div>
           <textarea
             className='w-full rounded-md border px-3 py-2 focus:border-sky-500 focus:outline-none'
             placeholder='自己紹介'
             id='bio'
-            {...register('bio')}
+            {...register('bio', { required: false })}
             rows={5}
           />
         </div>
 
+        {/* 年齢の表示と入力 */}
+        <div className='mb-5'>
+          <div className='mb-1 text-sm font-bold text-white'>年齢</div>
+          <input
+            type="text"
+            className='w-full rounded-md border px-3 py-2 focus:border-sky-500 focus:outline-none'
+            placeholder='年齢'
+            id='age'
+            {...register('age', { valueAsNumber: true, required: false })}
+            required
+          />
+          <div className='my-3 text-center text-sm text-red-500'>{errors.name?.message}</div>
+        </div>
+
+        <div className='flex space-x-6'>
+          {/* 学校の表示と入力 */}
+          <div className='mb-5'>
+            <div className='mb-1 text-sm font-bold text-white'>学校名</div>
+            <input
+              type="text"
+              className='w-full rounded-md border px-3 py-2 focus:border-sky-500 focus:outline-none'
+              placeholder='学校名'
+              id='school_name'
+              {...register('school_name', { valueAsNumber: true, required: false })}
+              required
+            />
+            <div className='my-3 text-center text-sm text-red-500'>{errors.name?.message}</div>
+          </div>
+
+          {/* 学年の表示と入力 */}
+          <div className='mb-5'>
+            <div className='mb-1 text-sm font-bold text-white'>年齢</div>
+            <input
+              type="text"
+              className='w-full rounded-md border px-3 py-2 focus:border-sky-500 focus:outline-none'
+              placeholder='学年'
+              id='grade'
+              {...register('grade', { valueAsNumber: true, required: false })}
+              required
+            />
+            <div className='my-3 text-center text-sm text-red-500'>{errors.name?.message}</div>
+          </div>
+        </div>
+
+        {/* 変更ボタン */}
         <div className='mb-5'>
           {loading ? (
             <Loading />
