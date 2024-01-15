@@ -35,7 +35,7 @@ const Logout = () => {
   };
 
   return (
-    <div>
+    <div className='mx-8 mt-12 justify-center md:mx-16'>
       <div className='mb-5 text-center text-white'>ログアウトしますか？</div>
       <form onSubmit={onSubmit}>
         <div className='mb-5'>

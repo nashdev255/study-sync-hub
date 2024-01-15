@@ -38,7 +38,7 @@ const SettingsLayout = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <>
-      <div className='my-12 flex justify-center md:mx-[10vw] md:mt-20'>
+      <div className='my-12 flex min-h-[100vh] justify-center md:mx-[10vw] md:mt-20'>
         <div className='mt-8 flex flex-col space-y-1 text-sm font-bold text-white md:mt-12 md:text-lg'>
           {subNavigation.map((item, index) => (
             <Link href={item.href} key={index}>

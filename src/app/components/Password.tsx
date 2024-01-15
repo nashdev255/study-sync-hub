@@ -63,7 +63,7 @@ const Password = () => {
   };
 
   return (
-    <div>
+    <div className='mx-8 justify-center md:mx-16'>
       <div className='mb-10 text-center text-xl font-bold text-white'>パスワード変更</div>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className='mb-5'>
@@ -78,7 +78,7 @@ const Password = () => {
           <div className='my-3 text-center text-sm text-red-500'>{errors.password?.message}</div>
         </div>
 
-        <div className='mb-5'>
+        <div className='mb-6'>
           <div className='mb-1 text-sm font-bold text-white'>確認用パスワード</div>
           <input
             type="password"

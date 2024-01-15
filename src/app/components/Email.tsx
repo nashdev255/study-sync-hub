@@ -64,7 +64,7 @@ const Email = ({ email }: { email: string }) => {
   };
 
   return (
-    <div>
+    <div className='mx-8 justify-center md:mx-16'>
       <div className='mb-10 text-center text-xl font-bold text-white'>メールアドレス変更</div>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className='mb-5'>
@@ -72,7 +72,7 @@ const Email = ({ email }: { email: string }) => {
           <div className='text-white'>{email}</div>
         </div>
 
-        <div className='mb-5'>
+        <div className='mb-6'>
           <div className='mb-1 text-sm font-bold text-white'>新しいメールアドレス</div>
           <input
             type='email'
