@@ -9,7 +9,7 @@ const SignupPage = async () => {
   const {
     data: { session },
   } = await supabase.auth.getSession();
-  if ( session ) redirect('/timeline');
+  if ( session ) redirect('/dashboard/timeline');
 
   return <Signup />;
 };
