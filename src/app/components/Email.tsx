@@ -69,7 +69,7 @@ const Email = ({ email }: { email: string }) => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className='mb-5'>
           <div className='mb-1 text-sm font-bold text-white'>現在のメールアドレス</div>
-          <div>{email}</div>
+          <div className='text-white'>{email}</div>
         </div>
 
         <div className='mb-5'>

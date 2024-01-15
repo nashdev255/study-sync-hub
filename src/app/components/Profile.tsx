@@ -140,7 +140,7 @@ const Profile = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className='mb-5'>
           <div className='mb-5 flex flex-col items-center justify-center text-sm'>
-            <div className='relative mb-5 md:h-32 md:w-32'>
+            <div className='relative mb-5 h-32 w-32'>
               <Image src={avatarUrl} className='rounded-full object-cover' alt='avatar' fill/>
             </div>
             <input type="file" id='avatar' onChange={onUploadImage} />

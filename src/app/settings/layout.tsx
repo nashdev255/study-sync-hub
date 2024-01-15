@@ -36,18 +36,18 @@ const SettingsLayout = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname();
 
   return (
-    <div className='grid grid-cols-3 gap-3'>
-      <div className='col-span-1 flex flex-col space-y-1 text-sm font-bold text-white'>
+    <div className='flex'>
+      <div className='flex flex-col space-y-1 text-sm font-bold text-white'>
         {subNavigation.map((item, index) => (
           <Link href={item.href} key={index}>
             <div className={`${item.href === pathname && 'bg-gray-500 text-gray-300'} rounded-full px-3 py-2 hover:bg-gray-600`}>
               <item.icon className='mr-2 inline-block h-5 w-5' />
-              { item.name }
+              <div className="hidden md:inline-block">{ item.name }</div>
             </div>
           </Link>
         ))}
       </div>
-      <div className='col-span-2'>{children}</div>
+      <div className='w-full justify-center'>{children}</div>
     </div>
   );
 };
