@@ -1,7 +1,7 @@
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
 
-const Timeline = () => {
+const TimelinePage = () => {
   return (
     <>
       <Header />
@@ -10,4 +10,4 @@ const Timeline = () => {
   );
 };
 
-export default Timeline;
+export default TimelinePage;
