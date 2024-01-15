@@ -18,8 +18,8 @@ const HeadLine = () => {
           </div>
           <div className='text-center'>
             <Link href={'/auth/signup'}>
-              <div className='inline-block rounded-lg bg-gray-800 px-8 py-2 hover:bg-gray-500'>
-                <h4 className=' text-center font-bold text-white'>
+              <div className='inline-block rounded-lg bg-gray-800 px-8 py-2 hover:bg-gray-500 lg:rounded-xl lg:px-10'>
+                <h4 className=' text-center font-bold text-white lg:text-lg'>
                   今すぐはじめる
                 </h4>
               </div>
