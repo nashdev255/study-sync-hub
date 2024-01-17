@@ -30,7 +30,7 @@ const Navigation = () => {
       <nav className='flex w-full justify-center'>
         <ul className='flex space-x-4 text-xl font-bold text-white'>
           {options.map((item, index) => (
-            <li key={index} className={`${pathname === item.href && 'border-b-2 border-white'} px-8 py-2`}>
+            <li key={index} className={`${pathname === item.href && 'border-b-2 border-white'} px-4 py-2 md:px-8`}>
               <Link href={item.href}>
                 {item.name}
               </Link>

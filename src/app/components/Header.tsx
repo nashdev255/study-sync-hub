@@ -44,8 +44,8 @@ const Header = ({
         <nav className='flex items-center justify-between p-6 md:px-12 lg:px-24'>
           {session ? (
             <>
-              <Link href={`${location.origin}/settings/profile`}>
-                <div className='relative mb-5 md:h-16 md:w-16'>
+              <Link href={'/settings/profile'}>
+                <div className='relative mb-5 h-14 w-14 md:h-16 md:w-16'>
                   <Image src={user?.avatar_url || '/default.png'} className='rounded-full object-cover' alt='profile' fill/>
                 </div>
               </Link>
@@ -61,7 +61,7 @@ const Header = ({
                     </div>
                   </IconContext.Provider>
                 </a>
-                <Link href={`${location.origin}/auth/login`}>
+                <Link href={'/auth/login'}>
                   <div className='flex space-x-2'>
                     <IconContext.Provider value={{ size: '1.5em' }}>
                       <div>
