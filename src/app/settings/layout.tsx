@@ -1,9 +1,3 @@
-import {
-  UserCircleIcon,
-  EnvelopeIcon,
-  KeyIcon,
-  ArrowLeftOnRectangleIcon,
-} from '@heroicons/react/24/outline';
 import SupabaseListener from '@/app/components/SupabaseListener';
 import Sidebar from '@/app/components/Sidebar';
 import Footer from '@/app/components/Footer';

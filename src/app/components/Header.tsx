@@ -1,16 +1,15 @@
 'use client';
 
+import { useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { IconContext } from 'react-icons';
-import { FaGithub } from 'react-icons/fa';
+import { usePathname } from 'next/navigation';
 import { GoPerson, GoTriangleDown } from 'react-icons/go';
+import { IconContext } from 'react-icons';
 import type { Session } from '@supabase/auth-helpers-nextjs';
 import type { Database } from '@/lib/database.types';
-import { useEffect } from 'react';
 type ProfileType = Database['public']['Tables']['users']['Row'];
 import useStore from '@/store';
-import { usePathname } from 'next/navigation';
 
 const Header = ({
   session,
@@ -35,6 +34,14 @@ const Header = ({
     });
   }, [session, setUser, user]);
 
+  const getBasePath = (path: string) => {
+    const segments = pathname.split('/');
+    if ( segments.length > 1 && segments[1] === 'settings' ) {
+      return '/settings';
+    }
+    return path;
+  };
+
   return (
     <header className='bg-gray-900'>
       <div className='mx-8 flex justify-between py-4'>
@@ -45,13 +52,13 @@ const Header = ({
         </div>
         <nav className='flex items-center justify-between p-6 md:px-12 lg:px-24'>
           {session ? (
-            <>
+            <div className={`${getBasePath(pathname) === '/settings' && 'hidden'}`}>
               <Link href={'/settings/profile'}>
                 <div className='relative mb-5 h-14 w-14 md:h-16 md:w-16'>
-                  <Image src={user?.avatar_url || '/default.png'} className='rounded-full object-cover' alt='profile' fill/>
+                  <Image src={ user?.avatar_url || '/default.png' } className='rounded-full object-cover' alt='profile' fill/>
                 </div>
               </Link>
-            </>
+            </div>
           ) : (
             <>
               <ul className='flex items-center space-x-2 md:space-x-4'>
@@ -79,9 +86,6 @@ const Header = ({
         </nav>
       </div>
     </header>
-  );
-  return (
-    <></>
   );
 };
 
