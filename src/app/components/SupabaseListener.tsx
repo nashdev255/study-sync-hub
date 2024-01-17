@@ -1,8 +1,9 @@
 'use server';
 
-import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
 import { cookies } from 'next/headers';
-import Navigation from './Navigation';
+import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
+import Header from '@/app/components/Header';
+import HeadLine from '@/app/components/HeadLine';
 
 import type { Database } from '@/lib/database.types';
 
@@ -13,7 +14,7 @@ const SupabaseListener = async () => {
   } = await supabase.auth.getSession();
 
   let user = null;
-  if(session) {
+  if ( session ) {
     const { data: currentUser } = await supabase
       .from('users')
       .select('*')
@@ -22,7 +23,6 @@ const SupabaseListener = async () => {
 
     user = currentUser;
 
-    /* メールアドレスを変更した場合にプロフィールを更新する */
     if ( currentUser && currentUser.email !== session.user.email ) {
       const { data: updatedUser } = await supabase
         .from('users')
@@ -35,7 +35,7 @@ const SupabaseListener = async () => {
     }
   }
 
-  return <Navigation session={session} user={user} />;
+  return <Header session={session} user={user} />;
 };
 
 export default SupabaseListener;
