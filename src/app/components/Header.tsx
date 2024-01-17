@@ -10,6 +10,7 @@ import type { Database } from '@/lib/database.types';
 import { useEffect } from 'react';
 type ProfileType = Database['public']['Tables']['users']['Row'];
 import useStore from '@/store';
+import { usePathname } from 'next/navigation';
 
 const Header = ({
   session,
@@ -19,6 +20,7 @@ const Header = ({
   user: ProfileType | null
 }) => {
   const { setUser } = useStore();
+  const pathname = usePathname();
 
   useEffect(() => {
     setUser({
