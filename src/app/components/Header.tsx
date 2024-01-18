@@ -44,7 +44,7 @@ const Header = ({
 
   return (
     <header className='bg-gray-900'>
-      <div className='flex justify-between px-16 py-4'>
+      <div className='flex justify-center py-4 space-x-[55vw]'>
         <div className='relative h-14 w-14 rounded-full object-cover md:h-16 md:w-16'>
           <Link href={'/'}>
             <Image src={'/images/ssh_fa.png'} alt={'icon'} fill/>
@@ -54,7 +54,7 @@ const Header = ({
           {session ? (
             <div className={`${getBasePath(pathname) === '/settings' && 'hidden'}`}>
               <Link href={'/settings/profile'}>
-                <div className='relative mb-5 h-14 w-14 md:h-16 md:w-16'>
+                <div className='relative h-14 w-14 md:h-16 md:w-16'>
                   <Image src={ user?.avatar_url || '/default.png' } className='rounded-full object-cover' alt='profile' fill/>
                 </div>
               </Link>
