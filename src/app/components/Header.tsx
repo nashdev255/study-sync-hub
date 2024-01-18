@@ -44,13 +44,13 @@ const Header = ({
 
   return (
     <header className='bg-gray-900'>
-      <div className='mx-8 flex justify-between py-4'>
-        <div className='px-0 sm:px-8'>
+      <div className='flex justify-between px-16 py-4'>
+        <div className='relative h-14 w-14 rounded-full object-cover md:h-16 md:w-16'>
           <Link href={'/'}>
-            <Image src={'/images/ssh_fa.png'} alt={'icon'} height={'65'} width={'65'} />
+            <Image src={'/images/ssh_fa.png'} alt={'icon'} fill/>
           </Link>
         </div>
-        <nav className='flex items-center justify-between p-6 md:px-12 lg:px-24'>
+        <nav className='flex items-center justify-between'>
           {session ? (
             <div className={`${getBasePath(pathname) === '/settings' && 'hidden'}`}>
               <Link href={'/settings/profile'}>
