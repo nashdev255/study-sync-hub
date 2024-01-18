@@ -46,7 +46,7 @@ const Header = ({
     <header className='bg-gray-900'>
       <div className='flex justify-center space-x-[55vw] py-4'>
         <div className='relative h-14 w-14 rounded-full object-cover md:h-16 md:w-16'>
-          <Link href={'/'}>
+          <Link href={'/dashboard/timeline'}>
             <Image src={'/images/ssh_fa.png'} alt={'icon'} fill/>
           </Link>
         </div>
