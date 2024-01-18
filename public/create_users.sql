@@ -4,6 +4,7 @@ create table public.users (
   email text not null,
   name text,
   bio text,
+  age 
   avatar_url text
 );
 
@@ -27,9 +28,8 @@ create trigger on_auth_user_created
   for each row execute procedure public.handle_new_user();
 
 -- storage config for avatar_url
-insert into storage.buckets (id, name, public) values ('users', 'users', true);
+insert into storage.buckets (id, name, public) values ('user', 'user', true);
 create policy "Allow select for all users" on storage.objects for select using ( bucket_id = 'user' );
 create policy "Allow insert for login users" on storage.objects for insert with check (bucket_id = 'user' AND auth.role() = 'authenticated');
 create policy "update own avatar_url" on storage.objects for update with check (bucket_id = 'user' AND auth.uid() = owner);
 create policy "delete own avatar_url" on storage.objects for delete using ( bucket_id = 'user' AND auth.uid() = owner );
-

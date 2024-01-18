@@ -15,7 +15,7 @@ type Schema = z.infer<typeof schema>
 
 const schema = z.object({
   name: z.string().min(2, { message: '2文字以上入力する必要があります。' }).max(16, { message: '16文字以下で入力する必要があります。' }),
-  bio: z.string().max(1000, { message: '最大文字数を超過しています。' }),
+  bio: z.string().min(0).max(1000, { message: '最大文字数を超過しています。' }),
   age: z.number().optional().nullable(),
   grade: z.number().optional().nullable(),
   school_name: z.string()
@@ -41,7 +41,7 @@ const Profile = () => {
       bio: user.bio ? user.bio : '',
       age: user.age ? user.age : null,
       grade: user.grade ? user.grade : null,
-      school_name: user.school_name ? user.school_name : ''
+      school_name: user.school_name ? user.school_name : '',
     },
     resolver: zodResolver(schema),
   });
@@ -88,7 +88,7 @@ const Profile = () => {
       if(avatar) {
         const { data: storageData, error: storageError } = await supabase
           .storage
-          .from('profile')
+          .from('user')
           .upload(`${user.id}/${uuidv4()}`, avatar);
 
         if ( storageError ) {
@@ -98,18 +98,18 @@ const Profile = () => {
 
         if ( avatar_url ) {
           const fileName = avatar_url.split('/').slice(-1)[0];
-          await supabase.storage.from('profile').remove([`${user.id}/${fileName}`]);
+          await supabase.storage.from('user').remove([`${user.id}/${fileName}`]);
         }
 
         const { data: urlData } = await supabase
           .storage
-          .from('profile')
+          .from('user')
           .getPublicUrl(storageData.path);
           
         avatar_url = urlData.publicUrl;
 
         const { error: updateError } = await supabase
-          .from('profiles')
+          .from('users')
           .update({
             name: data.name,
             bio: data.bio,
@@ -176,6 +176,7 @@ const Profile = () => {
             {...register('bio', { required: false })}
             rows={5}
           />
+          <div className='my-3 text-center text-sm text-red-500'>{errors.bio?.message}</div>
         </div>
 
         {/* 年齢の表示と入力 */}
@@ -189,7 +190,7 @@ const Profile = () => {
             {...register('age', { valueAsNumber: true, required: false })}
             required
           />
-          <div className='my-3 text-center text-sm text-red-500'>{errors.name?.message}</div>
+          <div className='my-3 text-center text-sm text-red-500'>{errors.age?.message}</div>
         </div>
 
         <div className='flex space-x-6'>
@@ -201,15 +202,15 @@ const Profile = () => {
               className='w-full rounded-md border px-3 py-2 focus:border-sky-500 focus:outline-none'
               placeholder='学校名'
               id='school_name'
-              {...register('school_name', { valueAsNumber: true, required: false })}
+              {...register('school_name', { required: false })}
               required
             />
-            <div className='my-3 text-center text-sm text-red-500'>{errors.name?.message}</div>
+            <div className='my-3 text-center text-sm text-red-500'>{errors.school_name?.message}</div>
           </div>
 
           {/* 学年の表示と入力 */}
           <div className='mb-5'>
-            <div className='mb-1 text-sm font-bold text-white'>年齢</div>
+            <div className='mb-1 text-sm font-bold text-white'>学年</div>
             <input
               type="text"
               className='w-full rounded-md border px-3 py-2 focus:border-sky-500 focus:outline-none'
@@ -218,7 +219,7 @@ const Profile = () => {
               {...register('grade', { valueAsNumber: true, required: false })}
               required
             />
-            <div className='my-3 text-center text-sm text-red-500'>{errors.name?.message}</div>
+            <div className='my-3 text-center text-sm text-red-500'>{errors.grade?.message}</div>
           </div>
         </div>
 
