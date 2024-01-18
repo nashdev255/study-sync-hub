@@ -89,12 +89,30 @@ const Contents = () => {
         </div>
         <div className="space-y-4">
           <h1 className="text-3xl font-bold">今後の展望</h1>
-          <p className="text-xl">
-            StudySyncHub Proというサブスクリプションを導入し、<br />
-            StudySync Booksなどの機能をより快適に利用できるようにしようと考えています。<br />
-            また、学生の就職に役立つ情報を提供するため、<br />
-            ポートフォリオや資料請求機能なども考えています。
-          </p>
+          <ul className="list-item space-y-4 text-xl text-white">
+            <div>
+              <li className="font-bold">StudySyncHub Pro Subscription</li>
+              <p>StudySync Booksなどの機能をより快適に利用できるようにしようと考えています。</p>
+            </div>
+            <div>
+              <li className="font-bold">StudySync Portfolio</li>
+              <p>
+                ユーザーひとりひとりが、
+                独創性を輝かせてポートフォリオを世界に発信できる機能を提供します。
+              </p>
+            </div>
+            <div>
+              <li className="font-bold">教材登録機能</li>
+              <p>
+                書籍を管理するための世界共通で使われているISBNを使い、
+                教材登録機能の導入を考えています。
+              </p>
+            </div>
+            <div>
+              <li className="font-bold">資料請求機能</li>
+              <p>学校や企業への資料請求を可能にします。</p>
+            </div>
+          </ul>
         </div>
       </div>
     </>
