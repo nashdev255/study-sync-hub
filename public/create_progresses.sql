@@ -7,6 +7,17 @@ create table if not exists public.progresses (
   created_at timestamp with time zone default timezone('utc' :: text, now()) not null
 );
 
+create or replace function public.current_user_id()
+returns uuid as $$
+begin
+  return current_setting('request.jwt.claim.sub')::uuid;
+exception
+  when others then
+  return null;
+end;
+$$ language plpgsql stable;
+
+
 -- Enable RLS for progresses table
 alter table public.progresses enable row level security;
 
@@ -18,4 +29,3 @@ create policy "All users can read all progresses" on public.progresses
 create policy "Users can modify only their own progresses" on public.progresses
   for all using (user_id = current_user_id())
   with check (user_id = current_user_id())
-  
