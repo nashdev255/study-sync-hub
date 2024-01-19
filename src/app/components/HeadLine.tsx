@@ -32,7 +32,7 @@ const HeadLine = () => {
       {/* タブレット・PC端末向け */}
       <div className="hidden bg-[url('/images/header.png')] bg-cover p-10 md:flex lg:px-32 lg:py-48">
         <div className='h-full items-center space-y-4 px-[2vw] xl:px-[10vw]'>
-          <div className='items-center space-y-2 text-center text-3xl lg:text-5xl font-bold text-gray-200 md:text-4xl'>
+          <div className='items-center space-y-2 text-center text-3xl font-bold text-gray-200 md:text-4xl lg:text-5xl'>
             <h1><span className="bg-gray-700 px-3">みんなで創ろう。</span></h1>
             <h1><span className="bg-gray-700 px-3">学びに「同期」と</span></h1>
             <h1><span className="bg-gray-700 px-3">よりよい学習体験を。</span></h1>
