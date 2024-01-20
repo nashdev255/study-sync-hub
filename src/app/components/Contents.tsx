@@ -88,6 +88,15 @@ const Contents = () => {
           </div>
         </div>
         <div className="space-y-4">
+          <h1 className="text-3xl font-bold">課題</h1>
+          <ul className="list-item space-y-4 text-xl text-white">
+            <div>
+              <li className="font-bold">UIの改善</li>
+              <p>どのようなユーザーでも直感的に理解できるようなUIに改善していきたいです。</p>
+            </div>
+          </ul>
+        </div>
+        <div className="space-y-4">
           <h1 className="text-3xl font-bold">今後の展望</h1>
           <ul className="list-item space-y-4 text-xl text-white">
             <div>
