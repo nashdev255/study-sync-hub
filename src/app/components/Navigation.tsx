@@ -28,9 +28,9 @@ const Navigation = () => {
   return (
     <>
       <nav className='flex w-full justify-center'>
-        <ul className='flex space-x-4 text-xl font-bold text-white'>
+        <ul className='flex space-x-4 text-lg font-bold text-white md:text-xl'>
           {options.map((item, index) => (
-            <li key={index} className={`${pathname === item.href && 'border-b-2 border-white'} px-4 py-2 md:px-8`}>
+            <li key={index} className={`${pathname === item.href && 'border-b-2 border-white'} py-2 md:px-8`}>
               <Link href={item.href}>
                 {item.name}
               </Link>
