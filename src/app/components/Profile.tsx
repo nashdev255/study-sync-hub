@@ -13,6 +13,8 @@ import type { Database } from '@/lib/database.types';
 import useStore from '@/store';
 type Schema = z.infer<typeof schema>
 
+import { ImFilePicture } from 'react-icons/im';
+
 const schema = z.object({
   name: z.string().min(2, { message: '2文字以上入力する必要があります。' }).max(16, { message: '16文字以下で入力する必要があります。' }),
   bio: z.string().min(0).max(1000, { message: '最大文字数を超過しています。' }),
@@ -144,8 +146,13 @@ const Profile = () => {
         {/* アイコンの表示と選択 */}
         <div className='mb-5'>
           <div className='mb-5 flex flex-col items-center justify-center text-sm'>
-            <label htmlFor='avatar' className='relative mb-5 h-36 w-36 lg:h-40 lg:w-40'>
-              <Image src={avatarUrl} className='rounded-full object-cover' alt='avatar' fill/>
+            <label htmlFor='avatar' className='relative mb-5'>
+              <div className='duration-150 hover:brightness-[0.75]'>
+                <div className='h-36 w-36 lg:h-40 lg:w-40'>
+                  <Image src={avatarUrl} className='rounded-full object-cover hover:cursor-pointer' alt='avatar' fill/>
+                </div>
+                <ImFilePicture className='absolute bottom-0 right-0 z-10 hover:cursor-pointer' size={'25'} color={'white'} />
+              </div>
             </label>
             <input type="file" id='avatar' onChange={onUploadImage} className='hidden' />
             {fileMessage && <div className='my-5 text-center text-red-500'>{fileMessage}</div>}
