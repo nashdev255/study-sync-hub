@@ -14,7 +14,9 @@ StudySyncHubは勉強の効率化と管理、モチベーションの上昇に�
 
 ### リンク
 
-<!--- ここにVercelのURLを貼る --->
+[StudySyncHub | みんなで創ろう。
+学びに「同期」と
+よりよい学習体験を。](https://studysynchub.vercel.app)
 
 ### 技術スタック
 
